@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 જન્મદિવસ મુબારક! 🎂</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Floating emojis -->
+    <div class="floating-emoji" style="top: 10%; left: 10%;">🥟</div>
+    <div class="floating-emoji" style="top: 20%; right: 15%; animation-delay: 2s;">🫔</div>
+    <div class="floating-emoji" style="top: 60%; left: 20%; animation-delay: 4s;">🍰</div>
+    <div class="floating-emoji" style="bottom: 20%; right: 10%; animation-delay: 6s;">🎂</div>
+
+    <!-- Navigation -->
+    <!-- <nav>
+        <ul>
+            <li><a href="#hero">🏠 હોમ</a></li>
+            <li><a href="#roasts">😂 રોસ્ટ</a></li>
+            <li><a href="#garba">🎪 ગરબા વ્હીલ</a></li>
+            <li><a href="#stats">📊 આંકડા</a></li>
+            <li><a href="#food">🍽️ ખોરાક</a></li>
+            <li><a href="#phrases">💬 શબ્દો</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
+        <div class="gujarati-subtitle">આજે તમે એક વર્ષ વધુ જૂના થયા!</div>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">Click the photo for a surprise!</p>
+        <div class="birthday-person">
+            <img src="./images/krish.jpeg" 
+                 class="birthday-img" 
+                 alt="Birthday Person" 
+                 onclick="easterEgg()" width="200">
+        </div>
+        <!-- <div class="dhokla-emoji" onclick="dhoklaClick()">🍜</div>
+        <p class="gujarati-subtitle">ચાઇનીઝ પર ક્લિક કરો! 😄</p> -->
+        <div style="background: var(--card-bg); padding: 2rem; border-radius: 20px; max-width: 600px; margin: 2rem auto; border: 3px solid var(--saffron);">
+            <p style="font-size: 1.3rem; line-height: 1.8;">
+                <strong>હવે તમે સાચા અર્થમાં જૂના થઈ ગયા છો!</strong><br>
+                પણ ચિંતા ન કરશો, ગુજરાતીઓ જેમ જેમ જૂના થાય તેમ તેમ વધુ સ્વાદિષ્ટ થાય છે!<br>
+                જેમ કે ચાઇનીઝ! 😂
+            </p>
+        </div>
+    </section>
+
+    <!-- <section id="hero">
+        
+        
+    </section> -->
+
+    <!-- Roasts Section -->
+    <section id="roasts">
+        <h2>😂 ગુજરાતી રોસ્ટ મસાલા 😂</h2>
+        <!-- <p class="gujarati-subtitle">થોડી મજાક ચાલશે ને! 🌶️</p> -->
+        
+        <div class="roast-grid">
+            <div class="roast-card" onclick="showRoast(0)">
+                <div class="roast-emoji">👴</div>
+                <div class="roast-text">હવે તમારી ઉંમર આટલી થઈ ગઈ કે...</div>
+            </div>
+            
+            <div class="roast-card" onclick="showRoast(1)">
+                <div class="roast-emoji">😴</div>
+                <div class="roast-text">તમારી નિદ્રા વિશે...</div>
+            </div>
+            
+            <div class="roast-card" onclick="showRoast(2)">
+                <div class="roast-emoji">🍽️</div>
+                <div class="roast-text">તમે કેટલું ખાધું છે તે ગણતરી...</div>
+            </div>
+            
+            <div class="roast-card" onclick="showRoast(3)">
+                <div class="roast-emoji">💰</div>
+                <div class="roast-text">તમારી બચત વિશે...</div>
+            </div>
+            
+            <div class="roast-card" onclick="showRoast(4)">
+                <div class="roast-emoji">📱</div>
+                <div class="roast-text">તમે અને ટેક્નોલોજી...</div>
+            </div>
+            
+            <div class="roast-card" onclick="showRoast(5)">
+                <div class="roast-emoji">🏏</div>
+                <div class="roast-text">ક્રિકેટ જોવાની આદત...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garba Wheel Section -->
+    <section id="garba">
+        <h2>🎪 ગરબા રોસ્ટ વ્હીલ 🎪</h2>
+        <p class="gujarati-subtitle">વ્હીલને ઘુમાવો અને તમારી કિસ્મત જુઓ! 😈</p>
+        
+        <div class="garba-container">
+            <div class="garba-pointer">👇</div>
+            <div class="garba-wheel" id="garbaWheel" onclick="spinGarba()">
+                ક્લિક કરો!<br>
+                ફેરવો!
+            </div>
+        </div>
+        
+        <div class="roast-result" id="garbaResult">
+            વ્હીલ પર ક્લિક કરો અને તમારી રોસ્ટ મેળવો! 🔥
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats">
+        <h2>📊 તમારી જીવનની ગણતરી 📊</h2>
+        <p class="gujarati-subtitle">આંકડા જાણીને આશ્ચર્ય થશે! 😱</p>
+        
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be generated here -->
+        </div>
+    </section>
+
+    <!-- Food Comparison -->
+    <section id="food">
+        <h2>🍽️ ગુજરાતી ખોરાક સરખામણી 🍽️</h2>
+        <p class="gujarati-subtitle">તમે આટલું બધું ખાધું! 😂</p>
+        
+        <div class="food-grid">
+            <div class="food-card">
+                <div class="food-emoji">🥟</div>
+                <div class="food-name">ઢોકળા</div>
+                <div class="food-text">
+                    તમારી જીંદગીમાં લગભગ <strong id="dhoklaCount">0</strong> ઢોકળા ખાધા!<br>
+                    <em>(દરરોજ 1 ના હિસાબે)</em>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <div class="food-emoji">🫔</div>
+                <div class="food-name">ફાફડા-જલેબી</div>
+                <div class="food-text">
+                    રવિવારે ફાફડા-જલેબી: <strong id="fafdaCount">0</strong> વખત!<br>
+                    <em>(સાચા ગુજરાતી હો તો!)</em>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <div class="food-emoji">🥛</div>
+                <div class="food-name">ચા</div>
+                <div class="food-text">
+                    આજ સુધી <strong id="chaiCount">0</strong> કપ ચા પીધી!<br>
+                    <em>(દરરોજ 3 કપ ના હિસાબે)</em>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <div class="food-emoji">🍪</div>
+                <div class="food-name">થેપલા</div>
+                <div class="food-text">
+                    બા ના હાથ ના થેપલા: <strong id="theplaCount">0</strong>+<br>
+                    <em>(ગણી શકાય તેમ નથી!)</em>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <div class="food-emoji">🍚</div>
+                <div class="food-name">દાળ-ભાત-શાક</div>
+                <div class="food-text">
+                    દાળ-ભાત-શાક: <strong id="dalBhatCount">0</strong> પ્લેટ!<br>
+                    <em>(રોજિંદી જીંદગી!)</em>
+                </div>
+            </div>
+            
+            <div class="food-card">
+                <div class="food-emoji">🥙</div>
+                <div class="food-name">ખાંડવી</div>
+                <div class="food-text">
+                    ખાંડવી રોલ્સ: <strong id="khandviCount">0</strong>+<br>
+                    <em>(ગણતરી કરવાનું મુશ્કેલ!)</em>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gujarati Phrases -->
+    <section id="phrases">
+        <h2>💬 ખાસ ગુજરાતી શબ્દો 💬</h2>
+        <p class="gujarati-subtitle">જન્મદિવસની શુભેચ્છા... ગુજરાતી સ્ટાઈલ! 😄</p>
+        
+        <div class="phrase-container">
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "વય ગઈ વય! આજે તો જન્મદિવસ છે!"
+                </div>
+                <div class="phrase-meaning">
+                    (Wow! It's your birthday today!)
+                </div>
+            </div>
+            
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "હવે તો તમે સાચા જૂના થઈ ગયા! બસ બાકી રહ્યું!"
+                </div>
+                <div class="phrase-meaning">
+                    (Now you're truly old! That's all that's left!)
+                </div>
+            </div>
+            
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "ઉંમર તો વધી જ પણ અક્કલ ક્યારે વધશે?"
+                </div>
+                <div class="phrase-meaning">
+                    (Age increased, but when will wisdom increase?)
+                </div>
+            </div>
+            
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "એક વર્ષ વધુ જીવ્યા એટલે એક વર્ષ વધુ ઢોકળા ખાધા!"
+                </div>
+                <div class="phrase-meaning">
+                    (One more year lived = one more year of dhokla eaten!)
+                </div>
+            </div>
+            
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "જન્મદિવસ મુબારક! હવે તો નાનપણ ગયું!"
+                </div>
+                <div class="phrase-meaning">
+                    (Happy Birthday! Your childhood is gone now!)
+                </div>
+            </div>
+            
+            <div class="phrase-item">
+                <div class="phrase-gujarati">
+                    "આટલા વરસ થયા પણ હજુ પણ સુધર્યા નહીં!"
+                </div>
+                <div class="phrase-meaning">
+                    (So many years passed but you still haven't improved!)
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem;">
+            <button class="btn" onclick="makeConfetti(100)">🎉 ઉજવણી કરો! 🎉</button>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">🎉</h2>
+            <p id="modalText" style="font-size: 1.3rem; margin: 2rem 0; line-height: 1.8;"></p>
+            <button class="close-modal" onclick="closeModal()">બરાબર!</button>
+        </div>
+    </div>
+
+   <script src="./script.js"></script>
+</body>
+</html>

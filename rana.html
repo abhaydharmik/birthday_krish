@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 ULTIMATE BIRTHDAY ROAST 🎂</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Poppins:wght@400;600;800&display=swap');
+        
+        :root {
+            --primary: #FF006E;
+            --secondary: #FFD60A;
+            --accent: #06FFA5;
+            --purple: #8338EC;
+            --bg: #0A0E27;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--bg) 0%, #1a1f4d 100%);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+        }
+        
+        nav a:hover {
+            background: var(--primary);
+            transform: scale(1.1);
+        }
+        
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 6rem 2rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s linear infinite;
+            text-shadow: 0 0 30px rgba(255, 0, 110, 0.5);
+        }
+        
+        h2 {
+            font-family: 'Permanent Marker', cursive;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 2rem;
+            color: var(--secondary);
+        }
+        
+        @keyframes rainbow {
+            0%, 100% { filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(360deg); }
+        }
+        
+        /* Hero Section */
+        #hero {
+            text-align: center;
+        }
+        
+        .birthday-person {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 5px solid var(--primary);
+            object-fit: cover;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 50px rgba(255, 0, 110, 0.5);
+            margin: 2rem auto;
+        }
+        
+        .birthday-person:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 80px var(--accent);
+        }
+        
+        .birthday-person.clicked {
+            animation: spinAndExplode 1s ease-out;
+        }
+        
+        @keyframes spinAndExplode {
+            0% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.5) rotate(180deg); }
+            100% { transform: scale(1) rotate(360deg); }
+        }
+        
+        /* Photo Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem 0;
+        }
+        
+        .photo-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-10px) rotate(-2deg);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(255, 0, 110, 0.3);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+        
+        .photo-caption {
+            font-family: 'Permanent Marker', cursive;
+            color: var(--secondary);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        /* Then vs Now */
+        .comparison {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 1000px;
+        }
+        
+        .comparison-item {
+            text-align: center;
+            position: relative;
+        }
+        
+        .comparison-item img {
+            width: 300px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 3px solid var(--accent);
+        }
+        
+        .comparison-label {
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            margin-top: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Meme Generator */
+        .meme-container {
+            position: relative;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .meme-image {
+            width: 100%;
+            border-radius: 20px;
+            border: 4px solid var(--purple);
+        }
+        
+        .meme-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            color: white;
+            text-shadow: 3px 3px 0 black, -3px -3px 0 black, 3px -3px 0 black, -3px 3px 0 black;
+            letter-spacing: 2px;
+        }
+        
+        .meme-top { top: 20px; }
+        .meme-bottom { bottom: 20px; }
+        
+        .meme-controls {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+        }
+        
+        .meme-controls input {
+            padding: 1rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: 2px solid var(--accent);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        /* Video Player */
+        .video-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            box-shadow: 0 10px 50px rgba(255, 0, 110, 0.5);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, var(--purple), var(--primary));
+            padding: 4rem 2rem;
+            text-align: center;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.5rem;
+        }
+        
+        /* Roast-o-Meter */
+        .roast-wheel {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 2rem auto;
+        }
+        
+        .wheel {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 10px solid var(--primary);
+            background: conic-gradient(
+                var(--primary) 0deg 60deg,
+                var(--secondary) 60deg 120deg,
+                var(--accent) 120deg 180deg,
+                var(--purple) 180deg 240deg,
+                #FF006E 240deg 300deg,
+                #FFD60A 300deg 360deg
+            );
+            transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+        }
+        
+        .wheel-pointer {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+        }
+        
+        .roast-result {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 20px;
+            font-family: 'Permanent Marker', cursive;
+            font-size: 1.5rem;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Age Calculator */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+        
+        .stat-number {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: var(--secondary);
+            margin: 1rem 0;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+        
+        /* Guess the Baby Game */
+        .baby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 2rem 0;
+        }
+        
+        .baby-option {
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 3px solid transparent;
+        }
+        
+        .baby-option img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .baby-option:hover {
+            transform: scale(1.05);
+            border-color: var(--accent);
+        }
+        
+        .baby-option.correct {
+            border-color: #00ff00;
+            animation: pulse 0.5s;
+        }
+        
+        .baby-option.wrong {
+            border-color: #ff0000;
+            animation: shake 0.5s;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        
+        /* Gift Boxes */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 2rem 0;
+        }
+        
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            border-radius: 15px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .gift-box:hover {
+            transform: translateY(-10px) rotate(5deg);
+        }
+        
+        .gift-box.opened {
+            animation: giftOpen 0.5s;
+        }
+        
+        @keyframes giftOpen {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3) rotate(180deg); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Fake News */
+        .newspaper {
+            max-width: 800px;
+            background: #f4f4f4;
+            color: #000;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
+            font-family: Georgia, serif;
+        }
+        
+        .newspaper-header {
+            border-bottom: 3px solid #000;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .newspaper-title {
+            font-family: 'Permanent Marker', cursive;
+            font-size: 3rem;
+            text-align: center;
+            color: #000;
+        }
+        
+        .newspaper-headline {
+            font-family: 'Bangers', cursive;
+            font-size: 2.5rem;
+            margin: 1rem 0;
+            color: #000;
+            line-height: 1.2;
+        }
+        
+        .newspaper-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            columns: 2;
+            column-gap: 2rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            max-width: 800px;
+            margin: 2rem auto;
+        }
+        
+        .timeline-item {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .timeline-item:hover {
+            transform: translateX(10px);
+            border-color: var(--accent);
+        }
+        
+        .timeline-year {
+            font-family: 'Bangers', cursive;
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .timeline-event {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        /* History Facts */
+        .history-facts {
+            max-width: 800px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--purple);
+        }
+        
+        .history-fact {
+            padding: 1rem;
+            margin: 1rem 0;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            font-size: 1.1rem;
+        }
+        
+        /* Countdown */
+        .countdown-container {
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-box {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 2px solid var(--accent);
+        }
+        
+        .countdown-number {
+            font-family: 'Bangers', cursive;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+        
+        /* Buttons */
+        .btn {
+            font-family: 'Permanent Marker', cursive;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+            box-shadow: 0 5px 20px rgba(255, 0, 110, 0.4);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.6);
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background: var(--bg);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            text-align: center;
+            border: 3px solid var(--primary);
+        }
+        
+        .close-modal {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+        }
+        
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            animation: confettiFall 4s linear forwards;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        
+        @keyframes confettiFall {
+            to {
+                transform: translateY(110vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .newspaper-content {
+                columns: 1;
+            }
+            
+            .comparison {
+                flex-direction: column;
+            }
+            
+            .roast-wheel {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">🏠 Home</a></li>
+            <li><a href="#gallery">📸 Embarrassing Photos</a></li>
+            <li><a href="#comparison">👶 Then vs Now</a></li>
+            <li><a href="#meme">🎭 Meme Generator</a></li>
+            <li><a href="#video">🎬 Video Montage</a></li>
+            <li><a href="#roast">🔥 Roast-o-Meter</a></li>
+            <li><a href="#stats">📊 Age Stats</a></li>
+            <li><a href="#baby-game">🍼 Baby Game</a></li>
+            <li><a href="#gifts">🎁 Virtual Gifts</a></li>
+            <li><a href="#news">📰 Fake News</a></li>
+            <li><a href="#timeline">⏳ Timeline</a></li>
+            <li><a href="#history">📜 History</a></li>
+            <li><a href="#countdown">⏰ Countdown</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem;">Click the photo for a surprise!</p>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Crect fill='%23FF006E' width='300' height='300' rx='150'/%3E%3Ctext x='150' y='150' font-size='80' text-anchor='middle' dy='.3em' fill='white'%3E📸%3C/text%3E%3Ctext x='150' y='220' font-size='20' text-anchor='middle' fill='white'%3EADD PHOTO HERE%3C/text%3E%3C/svg%3E" 
+             class="birthday-person" 
+             alt="Birthday Person" 
+             onclick="easterEgg()">
+        <p style="font-size: 1.2rem; opacity: 0.8;">Scroll down for embarrassing content! 😈</p>
+    </section>
+
+    <!-- Embarrassing Photo Gallery -->
+    <section id="gallery">
+        <h2>📸 EMBARRASSING PHOTO GALLERY 📸</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">We dug these up from the archives... 😏</p>
+        <div class="gallery" id="photoGallery">
+            <!-- Photos will be added here -->
+        </div>
+    </section>
+
+    <!-- Then vs Now -->
+    <section id="comparison">
+        <h2>👶 THEN VS NOW 👴</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Look how much you've... changed? 😂</p>
+        <div class="comparison">
+            <div class="comparison-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%2306FFA5' width='300' height='400' rx='20'/%3E%3Ctext x='150' y='180' font-size='60' text-anchor='middle' fill='white'%3E👶%3C/text%3E%3Ctext x='150' y='250' font-size='24' text-anchor='middle' fill='white'%3EBABY PHOTO%3C/text%3E%3C/svg%3E" 
+                     alt="Baby Photo">
+                <div class="comparison-label">THEN (Cute!)</div>
+            </div>
+            <div class="comparison-item">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400'%3E%3Crect fill='%238338EC' width='300' height='400' rx='20'/%3E%3Ctext x='150' y='180' font-size='60' text-anchor='middle' fill='white'%3E😎%3C/text%3E%3Ctext x='150' y='250' font-size='24' text-anchor='middle' fill='white'%3ENOW PHOTO%3C/text%3E%3C/svg%3E" 
+                     alt="Current Photo">
+                <div class="comparison-label">NOW (Still cute!)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meme Generator -->
+    <section id="meme">
+        <h2>🎭 MEME GENERATOR 🎭</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Make your own birthday meme!</p>
+        <div class="meme-container">
+            <div style="position: relative;">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23FFD60A' width='600' height='600'/%3E%3Ctext x='300' y='280' font-size='80' text-anchor='middle' fill='%23000'%3E🎂%3C/text%3E%3Ctext x='300' y='350' font-size='24' text-anchor='middle' fill='%23000'%3EADD MEME PHOTO%3C/text%3E%3C/svg%3E" 
+                     class="meme-image" 
+                     alt="Meme Photo">
+                <div class="meme-text meme-top" id="memeTopText">WHEN YOU REALIZE</div>
+                <div class="meme-text meme-bottom" id="memeBottomText">YOU'RE ANOTHER YEAR OLDER</div>
+            </div>
+            <div class="meme-controls">
+                <input type="text" id="topTextInput" placeholder="Top Text" oninput="updateMeme()">
+                <input type="text" id="bottomTextInput" placeholder="Bottom Text" oninput="updateMeme()">
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Montage -->
+    <section id="video">
+        <h2>🎬 BIRTHDAY VIDEO MONTAGE 🎬</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">A collection of your finest moments... 😅</p>
+        <div class="video-container">
+            <div class="video-placeholder">
+                📹 ADD YOUR VIDEO HERE 📹<br><br>
+                Replace this with: &lt;video controls autoplay&gt;&lt;source src="your-video.mp4"&gt;&lt;/video&gt;
+            </div>
+        </div>
+    </section>
+
+    <!-- Roast-o-Meter -->
+    <section id="roast">
+        <h2>🔥 SPIN THE ROAST-O-METER 🔥</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">How brutal will it be? 😈</p>
+        <div class="roast-wheel">
+            <div class="wheel-pointer">👇</div>
+            <div class="wheel" id="roastWheel" onclick="spinWheel()">
+                CLICK TO<br>SPIN!
+            </div>
+        </div>
+        <div class="roast-result" id="roastResult">
+            Click the wheel to get roasted! 🔥
+        </div>
+    </section>
+
+    <!-- Age Statistics -->
+    <section id="stats">
+        <h2>📊 RIDICULOUS AGE STATS 📊</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Let's break down your existence...</p>
+        <div class="stats-grid" id="statsGrid">
+            <!-- Stats will be generated here -->
+        </div>
+    </section>
+
+    <!-- Guess the Baby Game -->
+    <section id="baby-game">
+        <h2>🍼 GUESS THE BABY! 🍼</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Which one is actually you? 🤔</p>
+        <div class="baby-grid" id="babyGrid">
+            <!-- Baby photos will be added here -->
+        </div>
+    </section>
+
+    <!-- Virtual Gifts -->
+    <section id="gifts">
+        <h2>🎁 UNWRAP YOUR GIFTS! 🎁</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Click each box... if you dare! 😏</p>
+        <div class="gift-grid" id="giftGrid">
+            <!-- Gift boxes will be generated here -->
+        </div>
+    </section>
+
+    <!-- Fake News Article -->
+    <section id="news">
+        <h2>📰 BREAKING NEWS! 📰</h2>
+        <div class="newspaper">
+            <div class="newspaper-header">
+                <div class="newspaper-title">THE BIRTHDAY TIMES</div>
+                <div style="text-align: center; font-size: 0.9rem;">SPECIAL EDITION - <span id="newsDate"></span></div>
+            </div>
+            <div class="newspaper-headline" id="newsHeadline">
+                LOCAL LEGEND TURNS [AGE]: WORLD CELEBRATES!
+            </div>
+            <div class="newspaper-content" id="newsContent">
+                In a shocking turn of events, sources confirm that [NAME] has officially aged another year, bringing their total to [AGE] years of pure awesomeness. Citizens around the globe have declared today a national holiday in honor of this momentous occasion.
+                <br><br>
+                "We've never seen anything like it," said one witness. "The birthday candles were so bright they could be seen from space!" Emergency services were called to the scene as the birthday cake was reportedly too large to fit through the door.
+                <br><br>
+                Experts predict that [NAME] will continue aging at a rate of one year per year, a phenomenon scientists are calling "absolutely normal but somehow still remarkable in this case."
+                <br><br>
+                The birthday celebration is expected to last well into the night, with reports of uncontrollable dancing, excessive cake consumption, and embarrassing photo sharing. More details as this story develops.
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline of Embarrassment -->
+    <section id="timeline">
+        <h2>⏳ TIMELINE OF EMBARRASSMENT ⏳</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">Your life's greatest hits (and misses)! 😂</p>
+        <div class="timeline" id="timeline">
+            <!-- Timeline items will be generated here -->
+        </div>
+    </section>
+
+    <!-- This Day in History -->
+    <section id="history">
+        <h2>📜 THIS DAY IN HISTORY 📜</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">What happened the year you were born?</p>
+        <div class="history-facts" id="historyFacts">
+            <!-- Historical facts will be generated here -->
+        </div>
+    </section>
+
+    <!-- Countdown to Old Age -->
+    <section id="countdown">
+        <h2>⏰ COUNTDOWN TO RETIREMENT ⏰</h2>
+        <div class="countdown-container">
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Only this much time until you're officially old! 😅</p>
+            <div class="countdown-display" id="countdownDisplay">
+                <!-- Countdown will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 id="modalTitle">🎉 SURPRISE! 🎉</h2>
+            <p id="modalText" style="font-size: 1.2rem; margin: 2rem 0;"></p>
+            <button class="close-modal" onclick="closeModal()">AWESOME!</button>
+        </div>
+    </div>
+
+    <script>
+        // Configuration - EDIT THESE!
+        const CONFIG = {
+            name: "YOUR FRIEND'S NAME",
+            age: 25, // Current age
+            birthYear: 2000,
+            birthDate: "January 1", // For history facts
+            retirementAge: 65
+        };
+
+        // Embarrassing Photos Data
+        const embarrassingPhotos = [
+            { caption: "That haircut though... 💇", url: "placeholder" },
+            { caption: "Why did we think this was cool? 😅", url: "placeholder" },
+            { caption: "This explains everything... 🤦", url: "placeholder" },
+            { caption: "No words... just no words 😂", url: "placeholder" },
+            { caption: "Peak fashion right here! 👔", url: "placeholder" },
+            { caption: "Remember when you said this never happened? 📸", url: "placeholder" }
+        ];
+
+        // Roast Messages
+        const roasts = [
+            "You're not old, you're just... chronologically gifted! 🎂",
+            "At your age, your back goes out more than you do! 😂",
+            "You're like a software update - nobody asked for you, but here you are! 💻",
+            "Congratulations on being one year closer to getting those senior discounts! 👴",
+            "You're not aging, you're marinating to perfection! 🍷",
+            "Remember when you could party all night? Yeah, me neither! 😴",
+            "You've reached an age where happy hour is a nap! 💤",
+            "At least you're not as old as you'll be next year! 🎉",
+            "You're proof that vintage things can still be awesome! 🎸",
+            "Age is just a number... a really BIG number in your case! 🔢"
+        ];
+
+        // Joke Gifts
+        const jokeGifts = [
+            "A lifetime supply of... anti-aging cream! (You'll need it 😉)",
+            "Congratulations! You won... absolutely nothing! 🎊",
+            "Here's a gift: The realization that you're getting older! 🎁",
+            "Your present: One more year of wisdom (allegedly)! 🧠",
+            "Surprise! It's just a box. But the real gift is friendship! 💝",
+            "You got: Reading glasses! (You might need them soon) 👓"
+        ];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEmbarrassingPhotos();
+            generateStats();
+            generateBabyGame();
+            generateGiftBoxes();
+            updateNewsArticle();
+            generateTimeline();
+            generateHistoryFacts();
+            updateCountdown();
+            makeConfetti(100);
+            
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+        });
+
+        // Load Embarrassing Photos
+        function loadEmbarrassingPhotos() {
+            const gallery = document.getElementById('photoGallery');
+            embarrassingPhotos.forEach((photo, index) => {
+                const card = document.createElement('div');
+                card.className = 'photo-card';
+                card.innerHTML = `
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200'%3E%3Crect fill='%23${['FF006E', '8338EC', '06FFA5', 'FFD60A'][index % 4]}' width='300' height='200'/%3E%3Ctext x='150' y='100' font-size='60' text-anchor='middle' fill='white'%3E📸%3C/text%3E%3Ctext x='150' y='150' font-size='16' text-anchor='middle' fill='white'%3EPHOTO ${index + 1}%3C/text%3E%3C/svg%3E" alt="Photo ${index + 1}">
+                    <div class="photo-caption">${photo.caption}</div>
+                `;
+                gallery.appendChild(card);
+            });
+        }
+
+        // Easter Egg
+        function easterEgg() {
+            const img = document.querySelector('.birthday-person');
+            img.classList.add('clicked');
+            makeConfetti(200);
+            showModal('SURPRISE!', '🎉 You found the secret! Here\'s some confetti! 🎊');
+            setTimeout(() => img.classList.remove('clicked'), 1000);
+        }
+
+        // Meme Generator
+        function updateMeme() {
+            document.getElementById('memeTopText').textContent = 
+                document.getElementById('topTextInput').value || 'WHEN YOU REALIZE';
+            document.getElementById('memeBottomText').textContent = 
+                document.getElementById('bottomTextInput').value || "YOU'RE ANOTHER YEAR OLDER";
+        }
+
+        // Roast-o-Meter
+        let isSpinning = false;
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+            
+            const wheel = document.getElementById('roastWheel');
+            const result = document.getElementById('roastResult');
+            const randomRotation = 1440 + Math.random() * 360; // At least 4 full spins
+            
+            wheel.style.transform = `rotate(${randomRotation}deg)`;
+            wheel.innerHTML = '🔥';
+            
+            setTimeout(() => {
+                const randomRoast = roasts[Math.floor(Math.random() * roasts.length)];
+                result.textContent = randomRoast;
+                result.style.background = 'linear-gradient(135deg, var(--primary), var(--purple))';
+                isSpinning = false;
+                wheel.innerHTML = 'SPIN<br>AGAIN!';
+                makeConfetti(50);
+            }, 3000);
+        }
+
+        // Generate Age Statistics
+        function generateStats() {
+            const age = CONFIG.age;
+            const stats = [
+                { label: 'Days Old', value: Math.floor(age * 365.25) },
+                { label: 'Hours Lived', value: Math.floor(age * 365.25 * 24) },
+                { label: 'Minutes of Wisdom', value: Math.floor(age * 365.25 * 24 * 60) },
+                { label: 'Seconds of Awesomeness', value: Math.floor(age * 365.25 * 24 * 60 * 60) },
+                { label: 'Pizzas Eaten (estimate)', value: Math.floor(age * 52) },
+                { label: 'Naps Taken', value: Math.floor(age * 365) },
+                { label: 'Birthdays Celebrated', value: age },
+                { label: 'Years Until Senior Discount', value: 65 - age }
+            ];
+            
+            const grid = document.getElementById('statsGrid');
+            stats.forEach(stat => {
+                const card = document.createElement('div');
+                card.className = 'stat-card';
+                card.innerHTML = `
+                    <div class="stat-number">${stat.value.toLocaleString()}</div>
+                    <div class="stat-label">${stat.label}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Baby Photo Game
+        function generateBabyGame() {
+            const grid = document.getElementById('babyGrid');
+            const correctIndex = Math.floor(Math.random() * 4);
+            
+            for (let i = 0; i < 4; i++) {
+                const option = document.createElement('div');
+                option.className = 'baby-option';
+                const emoji = i === correctIndex ? '👶' : ['👧', '👦', '🧒'][i % 3];
+                option.innerHTML = `
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='250'%3E%3Crect fill='%23${['FF006E', '8338EC', '06FFA5', 'FFD60A'][i]}' width='200' height='250'/%3E%3Ctext x='100' y='125' font-size='80' text-anchor='middle' fill='white'%3E${emoji}%3C/text%3E%3C/svg%3E" alt="Baby ${i + 1}">
+                `;
+                option.onclick = () => checkBaby(option, i === correctIndex);
+                grid.appendChild(option);
+            }
+        }
+
+        function checkBaby(element, isCorrect) {
+            if (isCorrect) {
+                element.classList.add('correct');
+                showModal('CORRECT! 🎉', 'You found yourself! Though we all wish we could forget some of these photos... 😂');
+                makeConfetti(100);
+            } else {
+                element.classList.add('wrong');
+                showModal('NOPE! ❌', 'That\'s not you! Try again! 😅');
+            }
+            
+            setTimeout(() => {
+                element.classList.remove('correct', 'wrong');
+            }, 1000);
+        }
+
+        // Gift Boxes
+        function generateGiftBoxes() {
+            const grid = document.getElementById('giftGrid');
+            for (let i = 0; i < 6; i++) {
+                const box = document.createElement('div');
+                box.className = 'gift-box';
+                box.textContent = '🎁';
+                box.onclick = () => openGift(box, i);
+                grid.appendChild(box);
+            }
+        }
+
+        function openGift(box, index) {
+            box.classList.add('opened');
+            const gift = jokeGifts[index % jokeGifts.length];
+            showModal('YOU GOT A GIFT! 🎁', gift);
+            box.textContent = '✨';
+            setTimeout(() => {
+                box.textContent = '🎁';
+                box.classList.remove('opened');
+            }, 2000);
+        }
+
+        // Update News Article
+        function updateNewsArticle() {
+            const today = new Date();
+            document.getElementById('newsDate').textContent = today.toLocaleDateString('en-US', { 
+                year: 'numeric', month: 'long', day: 'numeric' 
+            });
+            
+            const headline = document.getElementById('newsHeadline');
+            const content = document.getElementById('newsContent');
+            
+            headline.innerHTML = headline.innerHTML.replace('[AGE]', CONFIG.age);
+            content.innerHTML = content.innerHTML
+                .replace(/\[NAME\]/g, CONFIG.name)
+                .replace(/\[AGE\]/g, CONFIG.age);
+        }
+
+        // Generate Timeline
+        function generateTimeline() {
+            const timeline = document.getElementById('timeline');
+            const events = [
+                { year: CONFIG.birthYear, event: `Born! The world became infinitely cooler 😎` },
+                { year: CONFIG.birthYear + 5, event: `Started school. Probably cried. We all did. 😭` },
+                { year: CONFIG.birthYear + 10, event: `Double digits! Thought you were basically an adult 🤣` },
+                { year: CONFIG.birthYear + 16, event: `Sweet 16! Or awkward 16? Both? 😅` },
+                { year: CONFIG.birthYear + 18, event: `Legally an adult! Still didn't know what you were doing 🎓` },
+                { year: 2025, event: `Present day: Still figuring it out, but looking good! 🌟` }
+            ];
+            
+            events.forEach(event => {
+                const item = document.createElement('div');
+                item.className = 'timeline-item';
+                item.innerHTML = `
+                    <div class="timeline-year">${event.year}</div>
+                    <div class="timeline-event">${event.event}</div>
+                `;
+                timeline.appendChild(item);
+            });
+        }
+
+        // Generate History Facts
+        function generateHistoryFacts() {
+            const container = document.getElementById('historyFacts');
+            const facts = [
+                `🎬 Popular movies in ${CONFIG.birthYear} included gladiators and special effects`,
+                `🎵 The music scene was totally different back then!`,
+                `💻 The internet was just getting started (yes, we're that old now)`,
+                `📱 Smartphones? What are those? (They didn't exist yet!)`,
+                `🎮 Gaming was pixelated and we loved it!`,
+                `📺 We actually had to wait for shows to air!`
+            ];
+            
+            container.innerHTML = '<h3 style="font-family: Permanent Marker; font-size: 1.8rem; margin-bottom: 1rem;">Fun Facts from ' + CONFIG.birthYear + '</h3>';
+            facts.forEach(fact => {
+                const div = document.createElement('div');
+                div.className = 'history-fact';
+                div.textContent = fact;
+                container.appendChild(div);
+            });
+        }
+
+        // Countdown to Retirement
+        function updateCountdown() {
+            const now = new Date();
+            const retirement = new Date(CONFIG.birthYear + CONFIG.retirementAge, now.getMonth(), now.getDate());
+            
+            const diff = retirement - now;
+            const years = Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+            const days = Math.floor((diff % (1000 * 60 * 60 * 24 * 365.25)) / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const display = document.getElementById('countdownDisplay');
+            display.innerHTML = `
+                <div class="countdown-box">
+                    <div class="countdown-number">${years}</div>
+                    <div class="countdown-label">Years</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number">${days}</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number">${hours}</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number">${minutes}</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+            `;
+        }
+
+        // Confetti
+        function makeConfetti(count) {
+            const colors = ['#FF006E', '#FFD60A', '#06FFA5', '#8338EC'];
+            const shapes = ['●', '■', '▲', '★'];
+            
+            for (let i = 0; i < count; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.top = '-10px';
+                    confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 4000);
+                }, i * 30);
+            }
+        }
+
+        // Modal
+        function showModal(title, text) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalText').textContent = text;
+            document.getElementById('modal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.remove('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Auto confetti
+        setInterval(() => makeConfetti(20), 15000);
+    </script>
+</body>
+</html>
