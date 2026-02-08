@@ -5,34 +5,73 @@ const CONFIG = {
   birthYear: 2006,
 };
 
-// Roast messages in Gujarati
-// const gujaratiRoasts = [
-//   "હવે તમારી ઉંમર આટલી થઈ ગઈ કે તમે ઉભા થતાં પણ અવાજ કરો છો! 😂",
-//   "તમે સવારે 6 વાગ્યે ઊઠો છો અને કહો છો 'આજકાલ ના બાળકો આળસુ છે!' 👴",
-//   "તમારી પસંદગી: પહેલા ખોરાક, પછી ચા, પછી નિદ્રા. સાચા ગુજરાતી! 🍽️",
-//   "હવે તમે દર વાતમાં કહો છો 'આપણા સમયે...' બસ, હવે તમે પૂરા જૂના થઈ ગયા! ⏰",
-//   "તમે રવિવારે ફાફડા વગર જીવી શકતા નથી! પ્યોર ગુજરાતી સિમ્પટમ્સ! 🫔",
-//   "તમારી સવારની શરૂઆત: ચા, અખબાર, અને પડોશીઓ ની ગપ્પા! ક્લાસિક! ☕",
-//   "તમે IPL માં ગુજરાત ટાઈટન્સ ને સપોર્ટ કરો અને જીત્યા તો ઘર માં દિવાળી કરો! 🏏",
-//   "હવે તમારું મોટું સ્વપ્ન: સારી બચત, સારું ઘર, અને સારા ઢોકળા! પરફેક્ટ! 💰",
-// ];
 
-// Garba wheel roasts
-const garbaRoasts = [
-  "અભિનંદન! તમે વધુ એક વર્ષ જીવ્યા અને વધુ જૂના થયા! જય શ્રી કૃષ્ણ! 🎊",
-  "તમે હવે એટલા અનુભવી છો કે તમને સલાહ આપવી મુશ્કેલ છે! 🧠",
-  // "તમારી યાદશક્તિ: ૨૦ વર્ષ પહેલાં શું થયું તે યાદ છે પણ ગઈ કાલે શું ખાધું તે ભૂલી ગયા! 🤔",
-  "તમે હવે સામાજિક કાર્યક્રમો માં વહેલા જાવ અને વહેલા આવો. સિમ્પલ લાઈફ! 🚶",
-  "તમારી જીંદગી નું મોટો નિર્ણય: આજે શું રાંધવું? ગુજરાતી પ્રોબ્લેમ્સ! 🍳",
-  "તમે હવે ફેસ્ટિવલ માં પણ ચા-નાસ્તો નું વધુ ધ્યાન રાખો છો! પ્રાયોરિટીઝ! 🎪",
+// Photo slider data
+const photos = [
+  {
+    image: "./images/krish7.jpeg", 
+    caption: "Ujada Chaman Krish 💇",
+  },
+  {
+    image: "./images/krish7.jpeg", 
+    caption: "Sweet Krish (Mitho) 👌🏻",
+  },
+  {
+    image: "./images/krish5.jpeg", 
+    caption: "Maari Nehu ❤️",
+  },
+  {
+    image: "./images/krish9.jpeg", 
+    caption: "Pookie Krish! 🎀",
+  },
+  {
+    image: "./images/krish6.jpeg", 
+    caption:
+      "Baby Krish 👶🏻",
+  },
+  {
+    image: "./images/krish18.jpeg", 
+    caption: "Krish from Africa 🌍",
+  },
+  {
+    image: "./images/krish16.jpeg", 
+    caption: "Overthinking Krish 🤔",
+  },
+  {
+    image: "./images/krish17.jpeg", 
+    caption: "Ek Smile De Jara Muskura.. 📸",
+  },
+  {
+    image: "./images/krish1.jpeg", 
+    caption: "Serious Krish 💁🏻‍♂️",
+  },
+  {
+    image: "./images/krish2.jpeg", 
+    caption: "Dashing Krish 💨",
+  },
 ];
+
 
 // Initialize
 document.addEventListener("DOMContentLoaded", function () {
+  initializeGallery();
   generateStats();
-  calculateFoodStats();
   makeConfetti(50);
 });
+
+function initializeGallery() {
+  const gallery = document.getElementById("photoGallery");
+
+  photos.forEach((photo, index) => {
+    const photoDiv = document.createElement("div");
+    photoDiv.className = "gallery-photo";
+    photoDiv.innerHTML = `
+                    <img src="${photo.image}" alt="Photo ${index + 1}">
+                    <div class="gallery-caption">${photo.caption}</div>
+                `;
+    gallery.appendChild(photoDiv);
+  });
+}
 
 // Generate Stats
 function generateStats() {
@@ -54,6 +93,16 @@ function generateStats() {
       emoji: "⏰",
     },
     {
+      label: "મિનિટ જીવ્યા",
+      value: Math.floor(age * 365.25 * 24 * 60).toLocaleString(),
+      emoji: "⏱️",
+    },
+    {
+      label: "સેકન્ડ જીવ્યા",
+      value: Math.floor(age * 365.25 * 24 * 60 * 60).toLocaleString(),
+      emoji: "🕰️",
+    },
+    {
       label: "નવરાત્રી ઉજવી",
       value: age,
       emoji: "🪔",
@@ -64,20 +113,31 @@ function generateStats() {
       emoji: "🎇",
     },
     {
+      label: "મકર સંક્રાતિ ઉજવી",
+      value: age,
+      emoji: "🪁",
+    },
+    {
+      label: "હોળી ઉજવી",
+      value: age,
+      emoji: "🔫",
+    },
+    {
+      label: "નાતાલ ઉજવી",
+      value: age,
+      emoji: "🎄",
+    },
+    {
       label: "IPL સીઝન જોયા",
       value: Math.max(0, age - 10),
       emoji: "🏏",
     },
     {
-      label: "કિલો વજન (અંદાજે)",
-      value: 60 + age * 0.5,
-      emoji: "⚖️",
+      label: "ચાઇનીઝ ખાધી (અંદાજે)",
+      value:  Math.floor(age * 21) ,
+      emoji: "🏏",
     },
-    {
-      label: "WhatsApp ગ્રુપ",
-      value: Math.min(age * 2, 50),
-      emoji: "📱",
-    },
+    
   ];
 
   const grid = document.getElementById("statsGrid");
@@ -93,90 +153,20 @@ function generateStats() {
   });
 }
 
-// Calculate Food Stats
-function calculateFoodStats() {
-  const age = CONFIG.age;
-  const days = Math.floor(age * 365.25);
-
-  document.getElementById("dhoklaCount").textContent = days;
-  document.getElementById("fafdaCount").textContent = Math.floor(age * 52);
-  document.getElementById("chaiCount").textContent = (
-    days * 3
-  ).toLocaleString();
-  document.getElementById("theplaCount").textContent = (
-    days * 2
-  ).toLocaleString();
-  document.getElementById("dalBhatCount").textContent = days.toLocaleString();
-  document.getElementById("khandviCount").textContent = Math.floor(
-    age * 100,
-  ).toLocaleString();
-}
-
-// Roast cards
-function showRoast(index) {
-  const roasts = [
-    gujaratiRoasts[0],
-    gujaratiRoasts[2],
-    gujaratiRoasts[4],
-    gujaratiRoasts[9],
-    gujaratiRoasts[3],
-    gujaratiRoasts[8],
-  ];
-  showModal("રોસ્ટ ટાઈમ! 🔥", roasts[index]);
-  makeConfetti(50);
-}
-
-// Garba Wheel
-let isSpinning = false;
-function spinGarba() {
-  if (isSpinning) return;
-  isSpinning = true;
-
-  const wheel = document.getElementById("garbaWheel");
-  const result = document.getElementById("garbaResult");
-  const randomRotation = 1440 + Math.random() * 360;
-
-  wheel.style.transform = `rotate(${randomRotation}deg)`;
-  wheel.innerHTML = "🎪";
-
-  setTimeout(() => {
-    const randomRoast =
-      garbaRoasts[Math.floor(Math.random() * garbaRoasts.length)];
-    result.textContent = randomRoast;
-    result.style.background =
-      "linear-gradient(135deg, var(--saffron), var(--green))";
-    isSpinning = false;
-    wheel.innerHTML = "ફરી<br>ફેરવો!";
-    makeConfetti(100);
-  }, 3000);
-}
-
-// Dhokla Click
-function dhoklaClick() {
-  const messages = [
-    "વાહ! ઢોકળા પર ક્લિક કર્યું! 🥟\n\nતમે સાચા ગુજરાતી છો! હવે થોડા ઢોકળા ખાઈ લો!",
-    "ઢોકળા! 😋\n\nગુજરાતી નું સૌથી મોટું પ્રેમ! તમારે પણ ખૂબ ગમતા હશે!",
-    "ઢોકળા એટેક! 🥟💥\n\nસવારે ઢોકળા વગર દિવસ શરૂ નથી થતો ને!",
-    "વાહ વા! 🎉\n\nતમે ઢોકળા ના ખાસ ચાહક લાગો છો!",
-    "ઢોકળા પ્રેમ! 💚\n\nગુજરાતી હો તો ઢોકળા ના દિવાના જ હશો!",
-  ];
-  const random = messages[Math.floor(Math.random() * messages.length)];
-  showModal("ઢોકળા! 🥟", random);
-  makeConfetti(80);
-}
-
 // Confetti
 function makeConfetti(count) {
-  const emojis = ["🥟", "🫔", "🎂", "🎉", "🎊", "✨", "💫", "🌟"];
+  const colors = ["#FF006E", "#FFD60A", "#06FFA5", "#8338EC"];
+  const shapes = ["●", "■", "▲", "★"];
 
   for (let i = 0; i < count; i++) {
     setTimeout(() => {
       const confetti = document.createElement("div");
       confetti.className = "confetti";
-      confetti.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
       confetti.style.left = Math.random() * 100 + "vw";
-      confetti.style.top = "-50px";
-      confetti.style.fontSize = Math.random() * 1.5 + 1 + "rem";
+      confetti.style.top = "-10px";
+      confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.fontSize = Math.random() * 20 + 10 + "px";
       document.body.appendChild(confetti);
 
       setTimeout(() => confetti.remove(), 4000);
@@ -209,10 +199,77 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Auto confetti
 setInterval(() => makeConfetti(20), 20000);
 
-function easterEgg() {
-  const img = document.querySelector(".birthday-person");
-  img.classList.add("clicked");
-  makeConfetti(200);
-  showModal("SURPRISE!", "🎉 You found the secret! Here's some confetti! 🎊");
-  setTimeout(() => img.classList.remove("clicked"), 1000);
+
+ const btn1 = document.getElementById("btn1");
+  const btn2 = document.getElementById("btn2");
+
+  const song1 = document.getElementById("song1");
+  const song2 = document.getElementById("song2");
+
+  const icon1 = document.getElementById("icon1");
+  const icon2 = document.getElementById("icon2");
+
+  // Show buttons on scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 150) {
+      btn1.classList.add("show");
+      btn2.classList.add("show");
+    } else {
+      btn1.classList.remove("show");
+      btn2.classList.remove("show");
+    }
+  });
+
+ let currentSong = null;
+
+function toggleSong(songNumber) {
+
+  // SONG 1 BUTTON
+  if (songNumber === 1) {
+    if (currentSong === song1) {
+      // pause same song
+      song1.pause();
+      icon1.classList.replace("fa-pause", "fa-play");
+      currentSong = null;
+    } else {
+      // stop other song
+      song2.pause();
+      icon2.classList.replace("fa-pause", "fa-play");
+
+      // play this song
+      song1.play();
+      icon1.classList.replace("fa-play", "fa-pause");
+      currentSong = song1;
+    }
+  }
+
+  // SONG 2 BUTTON
+  if (songNumber === 2) {
+    if (currentSong === song2) {
+      // pause same song
+      song2.pause();
+      icon2.classList.replace("fa-pause", "fa-play");
+      currentSong = null;
+    } else {
+      // stop other song
+      song1.pause();
+      icon1.classList.replace("fa-pause", "fa-play");
+
+      // play this song
+      song2.play();
+      icon2.classList.replace("fa-play", "fa-pause");
+      currentSong = song2;
+    }
+  }
 }
+
+// Reset icon when song ends
+song1.addEventListener("ended", () => {
+  icon1.classList.replace("fa-pause", "fa-play");
+  currentSong = null;
+});
+
+song2.addEventListener("ended", () => {
+  icon2.classList.replace("fa-pause", "fa-play");
+  currentSong = null;
+});

@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>🎂 જન્મદિવસ મુબારક! 🎂</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   </head>
   <body>
+
+ <!-- Songs -->
+<audio id="song1">
+  <source src="./songs/birthday_song.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="song2">
+  <source src="./songs/kirish_ka_gaana.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Song 1 Button (LEFT) -->
+<button class="floating-btn left-btn" id="btn1"
+ onclick="toggleSong(1)" title="birthday_song">
+  <i class="fas fa-play" id="icon1"></i>
+</button>
+
+<!-- Song 2 Button (RIGHT) -->
+<button class="floating-btn right-btn" id="btn2"
+ onclick="toggleSong(2)" title="kirish_ka_gaana">
+  <i class="fas fa-play" id="icon2"></i>
+</button>
+
     <!-- Floating emojis -->
     <div class="floating-emoji" style="top: 10%; left: 10%">🥟</div>
     <div
@@ -28,36 +53,18 @@
       🎂
     </div>
 
-    <!-- Navigation -->
-    <!-- <nav>
-        <ul>
-            <li><a href="#hero">🏠 હોમ</a></li>
-            <li><a href="#roasts">😂 રોસ્ટ</a></li>
-            <li><a href="#garba">🎪 ગરબા વ્હીલ</a></li>
-            <li><a href="#stats">📊 આંકડા</a></li>
-            <li><a href="#food">🍽️ ખોરાક</a></li>
-            <li><a href="#phrases">💬 શબ્દો</a></li>
-        </ul>
-    </nav> -->
-
     <!-- Hero Section -->
     <section id="hero">
-      <h1>🎉 HAPPY BIRTHDAY! 🎉</h1>
+      <h1>🎉 HAPPY BIRTHDAY KRISH! 🎉</h1>
       <div class="gujarati-subtitle">આજે તમે એક વર્ષ વધુ જૂના થયા!</div>
-      <p style="font-size: 1.5rem; margin-bottom: 2rem">
-        Click the photo for a surprise!
-      </p>
       <div class="birthday-person">
         <img
-          src="./images/krish.jpeg"
+          src="./images/krish4.jpeg"
           class="birthday-img"
           alt="Birthday Person"
-          onclick="easterEgg()"
           width="200"
         />
       </div>
-      <!-- <div class="dhokla-emoji" onclick="dhoklaClick()">🍜</div>
-        <p class="gujarati-subtitle">ચાઇનીઝ પર ક્લિક કરો! 😄</p> -->
       <div
         style="
           background: var(--card-bg);
@@ -69,81 +76,197 @@
         "
       >
         <p style="font-size: 1.3rem; line-height: 1.8">
-          <strong>હવે તમે સાચા અર્થમાં જૂના થઈ ગયા છો!</strong><br />
-          પણ ચિંતા ન કર, જેમ જેમ જૂના થાય તેમ તેમ વધુ મીઠા થાય
-          છે!<br />
+          <strong>હવે તમે હકીકતમાં જૂના થઈ ગયા છો!</strong><br />
+          પણ ચિંતા ન કર, જેમ જેમ જૂના થાય તેમ તેમ વધુ મીઠા થાય છે!<br />
           જેમ કે તું! 😂
         </p>
+        <p class="hashtags">#chineselover</p>
       </div>
     </section>
 
-    <div class="pic-ctn">
-      <img src="https://picsum.photos/200/300?t=1" alt="" class="pic" />
-      <img src="https://picsum.photos/200/300?t=2" alt="" class="pic" />
-      <img src="https://picsum.photos/200/300?t=3" alt="" class="pic" />
-      <img src="https://picsum.photos/200/300?t=4" alt="" class="pic" />
-      <img src="https://picsum.photos/200/300?t=5" alt="" class="pic" />
-    </div>
+    <!-- Photo Gallery Section -->
+    <section id="photos">
+      <h2>📸 EMBARRASSING PHOTO GALLERY 📸</h2>
+      <!-- <p class="subtitle">અમે આ બધી શોધી કાઢી! તમે છુપાવી શક્યા નહીં! 😈</p> -->
 
-    <section>
-      <h2>🎪 ગરબા રોસ્ટ વ્હીલ 🎪</h2>
-      <p class="gujarati-subtitle">વ્હીલને ઘુમાવો અને તમારી કિસ્મત જુઓ! 😈</p>
+      <div class="photo-gallery-container" id="photoGallery">
+        <!-- Photos will be added here by JavaScript -->
+      </div>
+    </section>
 
-      <div class="garba-container">
-        <div class="garba-pointer">👇</div>
-        <div class="garba-wheel" id="garbaWheel" onclick="spinGarba()">
-          ક્લિક કરો!<br />
-          ફેરવો!
+    <!-- Then vs Now -->
+    <section id="comparison">
+      <h2>👶 THEN VS NOW 👴</h2>
+      <p style="font-size: 1.2rem; margin-bottom: 2rem">
+        Look how much you've... changed? 😂
+      </p>
+      <div class="comparison">
+        <div class="comparison-item">
+          <img src="./images/krish3.jpeg" alt="Baby Photo" />
+          <div class="comparison-label">THEN (Cute!)</div>
+        </div>
+        <div class="comparison-item">
+          <img src="./images/krish11.jpeg" alt="Current Photo" />
+          <div class="comparison-label">NOW (Still cute!)</div>
         </div>
       </div>
-
-      <div class="roast-result" id="garbaResult">
-        વ્હીલ પર ક્લિક કરો અને તમારી રોસ્ટ મેળવો! 🔥
-      </div>
     </section>
+
+    <!-- Videos Section -->
+    <section id="videos">
+      <h2>🎬 EMBARRASSING VIDEOS 🎬</h2>
+      <!-- <p class="subtitle">તમારા પ્રિય લોકો તરફથી ખાસ સંદેશા!</p> -->
+
+      <div class="video-grid">
+
+        <!-- Vertical -->
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v2.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls poster="./images/thumbnail.png">
+              <source src="./videos/v4.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v3.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v14.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Horizontal -->
+
+        <div class="video-card horizontal">
+          <div class="video-placeholder">
+            <video controls >
+              <source src="./videos/v5.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        
+        <div class="video-card horizontal">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v22.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+
+         <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v6.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v7.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v9.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v16.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Horizontal -->
+
+        <div class="video-card horizontal">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v23.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card horizontal">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v24.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <!-- Vertical -->
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v18.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v19.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v21.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        
+        <div class="video-card vertical">
+          <div class="video-placeholder">
+            <video controls>
+              <source src="./videos/v14.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+
+      </div>
+
 
     <!-- Stats Section -->
     <section id="stats">
-      <h2>📊 તમારી જીવનની ગણતરી 📊</h2>
+      <h2>📊 RIDICULOUS AGE STATS 📊</h2>
       <p class="gujarati-subtitle">આંકડા જાણીને આશ્ચર્ય થશે! 😱</p>
 
       <div class="stats-grid" id="statsGrid">
         <!-- Stats will be generated here -->
-      </div>
-    </section>
-
-
-    <!-- Gujarati Phrases -->
-    <section id="phrases">
-      <h2>💬 ખાસ ગુજરાતી શબ્દો 💬</h2>
-      <p class="gujarati-subtitle">જન્મદિવસની શુભેચ્છા... ગુજરાતી સ્ટાઈલ! 😄</p>
-
-      <div class="phrase-container">
-
-        <div class="phrase-item">
-          <div class="phrase-gujarati">
-            "ઉંમર તો વધી જ પણ અક્કલ ક્યારે વધશે?"
-          </div>
-        </div>
-
-        <div class="phrase-item">
-          <div class="phrase-gujarati">
-            "એક વર્ષ વધુ જીવ્યા એટલે એક વર્ષ વધુ ચાઇનીઝ ખાધા!"
-          </div>
-        </div>
-
-
-        <div class="phrase-item">
-          <div class="phrase-gujarati">
-            "આટલા વરસ થયા પણ હજુ પણ સુધર્યા નહીં!"
-          </div>
-        </div>
-      </div>
-
-      <div style="text-align: center; margin-top: 3rem">
-        <button class="btn" onclick="makeConfetti(100)">
-          Let's Celebrate
-        </button>
       </div>
     </section>
 
@@ -158,6 +281,10 @@
         <button class="close-modal" onclick="closeModal()">બરાબર!</button>
       </div>
     </div>
+
+    <footer class="footer">
+      <p class="footer-text">Made with ❤️ by heinvalid</p>
+    </footer>
 
     <script src="./script.js"></script>
   </body>
