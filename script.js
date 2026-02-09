@@ -13,7 +13,7 @@ const photos = [
     caption: "Ujada Chaman Krish 💇",
   },
   {
-    image: "./images/krish7.jpeg", 
+    image: "./images/krish8.jpeg", 
     caption: "Sweet Krish (Mitho) 👌🏻",
   },
   {

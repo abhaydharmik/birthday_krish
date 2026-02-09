@@ -424,6 +424,18 @@ h2 {
 .gallery-photo:nth-child(6) {
     animation-delay: 25s;
 }
+.gallery-photo:nth-child(7) {
+    animation-delay: 30s;
+}
+.gallery-photo:nth-child(8) {
+    animation-delay: 35s;
+}
+.gallery-photo:nth-child(9) {
+    animation-delay: 40s;
+}
+.gallery-photo:nth-child(10) {
+    animation-delay: 45s;
+}
 
 /* Video Grid - Flexible Layout for Horizontal + Vertical */
 .video-grid {
