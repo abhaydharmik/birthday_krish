@@ -86,7 +86,7 @@ nav a:hover {
 /* Sections */
 section {
     min-height: 100vh;
-    padding: 2rem 2rem;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -98,7 +98,7 @@ section {
 
 h1 {
     font-family: 'Bangers', cursive;
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: 5.6rem;
     text-align: center;
     margin-bottom: 2rem;
     background: linear-gradient(45deg, var(--saffron), var(--dhokla-yellow), var(--green));
@@ -125,6 +125,13 @@ h1 {
     transform: scale(1.6);
 }
 
+.caption {
+
+    font-size: 1.3rem;
+    line-height: 1.8
+}
+
+
 .hashtags {
     color: gray;
     font-size: 16px;
@@ -133,10 +140,11 @@ h1 {
 
 h2 {
     font-family: 'Permanent Marker', cursive;
-    font-size: clamp(2rem, 6vw, 4rem);
+    font-size: 4rem;
     margin-bottom: 2rem;
     color: var(--dhokla-yellow);
     font-weight: 700;
+    text-align: center;
 }
 
 @keyframes rainbow {
@@ -153,9 +161,6 @@ h2 {
 
 /* Hero Section */
 #hero {
-    /* display: flex;
-    flex-direction: column;
-    gap: 10px; */
     text-align: center;
 }
 
@@ -184,101 +189,12 @@ h2 {
 }
 
 .gujarati-subtitle {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: 2rem;
     margin: 1rem 0;
     font-weight: 600;
-    color: var(--dhokla-yellow);
+    color: #fff;
 }
 
-/* Roast Cards */
-.roast-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem 0;
-    width: 100%;
-}
-
-.roast-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    padding: 2.5rem;
-    border-radius: 20px;
-    border: 3px solid var(--saffron);
-    transition: all 0.3s;
-    cursor: pointer;
-}
-
-.roast-card:hover {
-    transform: translateY(-10px) rotate(-2deg);
-    border-color: var(--jalebi-orange);
-    box-shadow: 0 15px 40px rgba(255, 153, 51, 0.4);
-}
-
-.roast-emoji {
-    font-size: 5rem;
-    margin-bottom: 1rem;
-}
-
-.roast-text {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    font-weight: 600;
-}
-
-/* Garba Wheel */
-.garba-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin: 2rem auto;
-}
-
-.garba-wheel {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 10px solid var(--saffron);
-    background: conic-gradient(var(--saffron) 0deg 60deg,
-            var(--dhokla-yellow) 60deg 120deg,
-            var(--green) 120deg 180deg,
-            var(--jalebi-orange) 180deg 240deg,
-            var(--masala-red) 240deg 300deg,
-            var(--saffron) 300deg 360deg);
-    transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-    box-shadow: 0 10px 50px rgba(255, 153, 51, 0.5);
-}
-
-.garba-pointer {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 3rem;
-}
-
-.roast-result {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 20px;
-    font-size: 1.5rem;
-    text-align: center;
-    min-height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 3px solid var(--dhokla-yellow);
-    line-height: 1.8;
-}
 
 /* Age Stats */
 .stats-grid {
@@ -319,101 +235,6 @@ h2 {
     font-weight: 600;
 }
 
-/* Food Comparison */
-.food-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem 0;
-}
-
-.food-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    padding: 2rem;
-    border-radius: 20px;
-    border: 3px solid var(--jalebi-orange);
-    text-align: center;
-    transition: all 0.3s;
-}
-
-.food-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(255, 102, 0, 0.4);
-}
-
-.food-emoji {
-    font-size: 5rem;
-    margin: 1rem 0;
-}
-
-.food-name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--dhokla-yellow);
-    margin: 1rem 0;
-}
-
-.food-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.9;
-}
-
-/* Gujarati Phrases */
-.phrase-container {
-    max-width: 800px;
-    margin: 2rem auto;
-    background: var(--card-bg);
-    backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: 20px;
-    border: 3px solid var(--masala-red);
-}
-
-.phrase-item {
-    padding: 1.5rem;
-    margin: 1rem 0;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
-    border-left: 5px solid var(--saffron);
-    font-size: 1.3rem;
-    line-height: 1.8;
-}
-
-.phrase-gujarati {
-    font-weight: 700;
-    color: var(--dhokla-yellow);
-    margin-bottom: 0.5rem;
-}
-
-.phrase-meaning {
-    opacity: 0.8;
-    font-style: italic;
-}
-
-/* Buttons */
-.btn {
-    font-family: 'Hind Vadodara', sans-serif;
-    padding: 1.2rem 3rem;
-    font-size: 1.3rem;
-    border: 3px solid var(--saffron);
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin: 1rem;
-    background: linear-gradient(135deg, var(--saffron), var(--jalebi-orange));
-    color: white;
-    box-shadow: 0 10px 30px rgba(255, 153, 51, 0.5);
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.btn:hover {
-    transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 40px rgba(255, 153, 51, 0.7);
-}
 
 /* Modal */
 .modal {
@@ -476,85 +297,6 @@ h2 {
     }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .garba-container {
-        width: 300px;
-        height: 300px;
-    }
-
-    .dhokla-emoji {
-        font-size: 8rem;
-    }
-
-    h1 {
-        font-size: 3rem;
-    }
-}
-
-.pic-ctn {
-    width: 100vw;
-    height: 200px;
-}
-
-@keyframes display {
-    0% {
-        transform: translateX(200px);
-        opacity: 0;
-    }
-
-    10% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    20% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-
-    30% {
-        transform: translateX(-200px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateX(-200px);
-        opacity: 0;
-    }
-}
-
-.pic-ctn {
-    position: relative;
-    width: 100vw;
-    height: 300px;
-    margin-top: 15vh;
-}
-
-.pic-ctn>img {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 100px);
-    opacity: 0;
-    animation: display 10s infinite;
-}
-
-img:nth-child(2) {
-    animation-delay: 2s;
-}
-
-img:nth-child(3) {
-    animation-delay: 4s;
-}
-
-img:nth-child(4) {
-    animation-delay: 6s;
-}
-
-img:nth-child(5) {
-    animation-delay: 8s;
-}
-
 /* Then vs Now */
 .comparison {
     display: flex;
@@ -574,14 +316,14 @@ img:nth-child(5) {
     height: 400px;
     object-fit: cover;
     border-radius: 20px;
-    border: 3px solid var(--accent);
+    border: 3px solid var(--saffron);
 }
 
 .comparison-label {
     font-family: 'Bangers', cursive;
     font-size: 2rem;
     margin-top: 1rem;
-    color: var(--primary);
+    color: var(--dhokla-yellow);
 }
 
 /* Animated Photo Gallery */
@@ -765,7 +507,6 @@ img:nth-child(5) {
     font-size: 1.2rem;
     font-weight: 700;
     text-align: center;
-    /* padding: 2rem; */
     gap: 1rem;
 }
 
@@ -773,47 +514,19 @@ img:nth-child(5) {
     font-size: 4rem;
 }
 
-/* .video-caption {
-            padding: 1.5rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dhokla-yellow);
-            text-align: center;
-            font-family: 'Noto Sans Gujarati', sans-serif;
-        } */
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .video-card.horizontal {
-        grid-column: span 1;
-    }
-}
-
-@media (max-width: 768px) {
-    .video-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .video-card.horizontal video {
-        height: 300px;
-    }
-
-    .video-card.vertical video {
-        height: 450px;
-    }
-}
-
 /* Footer */
+.footer {
+    padding: 2rem;
+    text-align: center;
+}
 
 .footer-text {
     color: gray;
     font-size: 16px;
 }
 
-
 /* Floating Button */
-
-  .floating-btn {
+.floating-btn {
     position: fixed;
     top: 20px;
     width: 60px;
@@ -825,24 +538,384 @@ img:nth-child(5) {
     cursor: pointer;
     display: none;
     z-index: 9999;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.2s;
-  }
+}
 
-  .floating-btn:hover {
+.floating-btn:hover {
     transform: scale(1.1);
-  }
+}
 
-  .left-btn {
+.left-btn {
     left: 20px;
     background: #ff4757;
-  }
+}
 
-  .right-btn {
+.right-btn {
     right: 20px;
     background: #1db954;
-  }
+}
 
-  .show {
+.show {
     display: block;
-  }
+}
+
+/* Mobile Specific Optimizations - ONLY applies to mobile/tablet screens */
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 1rem;
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        padding: 0.8rem 1rem;
+    }
+
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 10vw, 3rem);
+        padding: 0 1rem;
+    }
+
+    h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        padding: 0 1rem;
+    }
+
+    .birthday-person {
+        width: clamp(200px, 60vw, 280px);
+        height: clamp(200px, 60vw, 280px);
+    }
+
+    #hero>div[style*="background"] {
+        padding: 1.5rem !important;
+        margin: 1rem !important;
+    }
+
+    #hero>div[style*="background"] p {
+        font-size: .8rem;
+    }
+
+    #hero>div[style*="background"] strong {
+        font-size: 1rem;
+    }
+
+    .gujarati-subtitle {
+        font-size: 1.3rem;
+        padding: 0 1rem;
+    }
+
+    .floating-emoji {
+        font-size: 2rem;
+    }
+
+    .dhokla-emoji {
+        font-size: 8rem;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .video-card.horizontal {
+        grid-column: span 1;
+    }
+
+    .video-card.horizontal video {
+        height: 300px;
+    }
+
+    .video-card.vertical video {
+        height: 450px;
+    }
+
+    .video-card.vertical .video-placeholder {
+        height: 400px;
+    }
+
+    .video-card.horizontal .video-placeholder {
+        height: 300px;
+    }
+
+    .stats-grid{
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+        word-break: break-word;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .comparison {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .comparison-item {
+        max-width: 100%;
+    }
+
+    .comparison-subtitle {
+        font-size: .8rem;
+        margin-bottom: 2rem
+    }
+
+    .comparison-item img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .comparison-label {
+        font-size: 1.5rem;
+    }
+
+    .modal {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        padding: 2rem;
+        width: 95%;
+    }
+
+    .modal h2 {
+        font-size: 2rem;
+    }
+
+    .modal p {
+        font-size: 1.1rem !important;
+    }
+
+    .close-modal {
+        font-size: 1rem;
+    }
+
+    .photo-gallery-container {
+        height: clamp(400px, 80vw, 500px);
+    }
+
+    .gallery-photo img {
+        height: clamp(350px, 70vw, 450px);
+    }
+
+    .gallery-caption {
+        padding: 2rem 1rem 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .left-btn {
+        left: 10px;
+    }
+
+    .right-btn {
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .birthday-person {
+        width: 200px;
+        height: 200px;
+    }
+
+    .birthday-person img {
+        position: relative;
+        bottom: 76px;
+        transform: scale(1);
+    }
+
+    .dhokla-emoji {
+        font-size: 6rem;
+    }
+
+    .gujarati-subtitle {
+        font-size: 1rem;
+    }
+
+    .stat-card{
+        padding: 1.2rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+    }
+
+    .floating-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+        top: 15px;
+    }
+
+    .left-btn {
+        left: 8px;
+    }
+
+    .right-btn {
+        right: 8px;
+    }
+
+    .photo-gallery-container {
+        height: 350px;
+    }
+
+    .gallery-photo img {
+        height: 300px;
+    }
+
+    .gallery-caption {
+        font-size: 1.1rem;
+        padding: 1.5rem 1rem 1rem;
+    }
+
+    .video-card.vertical video {
+        height: 400px;
+    }
+
+    .video-card.horizontal video {
+        height: 250px;
+    }
+
+    .video-card.horizontal .video-placeholder {
+        height: 250px;
+    }
+
+    .comparison-item img {
+        min-height: 250px;
+    }
+
+    .comparison-label {
+        font-size: 1.3rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+
+    .modal h2 {
+        font-size: 1.6rem;
+    }
+
+    .modal p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Landscape mobile optimization */
+@media (max-width: 768px) and (orientation: landscape) {
+    section {
+        min-height: auto;
+        padding: 3rem 1rem;
+    }
+
+    .photo-gallery-container {
+        height: 450px;
+    }
+
+    .gallery-photo img {
+        height: 400px;
+    }
+
+    .video-card.vertical video {
+        height: 400px;
+    }
+
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* .caption p strong {
+        font-size: 1rem !important;
+    } */
+
+    .floating-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .birthday-person {
+        width: 180px;
+        height: 180px;
+    }
+
+    .dhokla-emoji {
+        font-size: 5rem;
+    }
+
+    .stat-number {
+        font-size: 1.8rem;
+    }
+
+}
+
+/* Tablet optimization */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-card.horizontal {
+        grid-column: span 2;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+.hidden {
+    overflow: hidden;
+}
